@@ -1,11 +1,8 @@
-package platForm
+package tcpClient
 
 import (
 	"fmt"
-	"net/http"
 	"utils"
-
-	"github.com/drone/routes"
 )
 
 var MaxRegisterCnt = 100000
@@ -20,7 +17,6 @@ type HandleControl struct {
 func TcpMain(IP, Host string) {
 	this := NewHandControl(IP)
 	if this != nil {
-		go this.httpServer(Host)
 		this.serve()
 	}
 }
@@ -33,16 +29,6 @@ func NewHandControl(IP string) *HandleControl {
 	}
 	this.tcpExample = utils.NewTCPCreate(IP, this)
 	return this
-}
-
-func (this *HandleControl) httpServer(Host string) {
-	mux := routes.New()
-	//完成订单
-	mux.Get("/FinishOrder", this.FinishOrder)
-	//完成苹果订单
-	//mux.Get("/FinishAutilsutilsOrder", utils.AutilsutilsOrderController)
-	http.Handle("/", mux)
-	http.ListenAndServe(Host, nil)
 }
 
 func (this *HandleControl) serve() {

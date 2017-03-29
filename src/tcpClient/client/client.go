@@ -24,7 +24,7 @@ func main() {
 }
 
 func init() {
-	cfgfile := flag.String("cfg", "platForm.ini", "config file for platForm")
+	cfgfile := flag.String("cfg", "client.ini", "config file for platForm")
 	flag.Parse()
 	//读取配置
 	NewDefenseConfig(*cfgfile)

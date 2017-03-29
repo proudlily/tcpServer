@@ -1,11 +1,10 @@
-package platForm
+package tcpClient
 
 import (
 	"fmt"
 	"gt_msg"
 	"time"
 	"utils"
-
 	"github.com/golang/protobuf/proto"
 )
 
