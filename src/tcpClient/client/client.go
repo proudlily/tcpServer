@@ -3,7 +3,7 @@ package main
 import (
 	"flag"
 	"gt_msg"
-	"platForm"
+	"tcpClient"
 
 	"runtime"
 	"utils"
@@ -20,7 +20,7 @@ var (
 func main() {
 	runtime.GOMAXPROCS(runtime.NumCPU())
 	//启动
-	platForm.TcpMain(IP, Host)
+	tcpClient.TcpMain(IP, Host)
 }
 
 func init() {

@@ -2,13 +2,13 @@ package main
 
 import (
 	"gt_msg"
-	"tcpClient"
+	"tcpClient1"
 	"utils"
 )
 
 //模拟一个客户端
 func main() {
-	tcpSocker := tcpClient.CreateTcp()
+	tcpSocker := tcpClient1.CreateTcp()
 	//定时发消息
 	tcpSocker.CronTask()
 	//接收消息

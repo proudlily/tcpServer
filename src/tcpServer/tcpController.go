@@ -106,7 +106,7 @@ func (this *TcpManage) tcpNetworkRead(req proto.Message) (bool, proto.Message) {
 	return true, nil
 }
 func (this *TcpManage) ReadOrder(req *gt_msg.Order) {
-	fmt.Printf("\n收到订单:%+v \n", req)
+	fmt.Printf("\n收到XX:%+v \n", req)
 }
 
 func (this *TcpManage) OnResp(closeConn bool, resp proto.Message) bool {
