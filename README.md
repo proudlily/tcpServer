@@ -8,8 +8,7 @@ protobuf 生成的go的文件
 ## tcpServe
 是tcp服务端
 
-tcpServe是搭建了一个http服务器和tcp服务器。</br>
-把通过http的url传来的参数，再通过tcp服务传给tcp的客户端。</br>
+tcpServe是搭建了tcp服务器。</br>
 tcp搭建起来很简单。可以参考Go网络编程。但是搭建好一个tcp服务器不简单。</br>
 其中这个tcp实现了：
 - 通过protobuf来传送消息
