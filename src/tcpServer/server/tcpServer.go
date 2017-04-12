@@ -3,7 +3,7 @@ package main
 import (
 	"flag"
 	"gt_msg"
-	"tcpClient"
+	"tcpServer"
 
 	"runtime"
 	"utils"
@@ -19,11 +19,11 @@ var (
 func main() {
 	runtime.GOMAXPROCS(runtime.NumCPU())
 	//启动
-	tcpClient.TcpMain(IP)
+	tcpServer.TcpMain(IP)
 }
 
 func init() {
-	cfgfile := flag.String("cfg", "client.ini", "config file for platForm")
+	cfgfile := flag.String("cfg", "server.ini", "config file for platForm")
 	flag.Parse()
 	//读取配置
 	NewDefenseConfig(*cfgfile)

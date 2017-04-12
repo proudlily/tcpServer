@@ -1,4 +1,4 @@
-package tcpServer
+package tcpClient
 
 import (
 	"fmt"
