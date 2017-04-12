@@ -29,8 +29,7 @@ tcpClient和tcpServe逻辑一样，读和写。
 tcp就是以上这些啦。另外就是用语言来实现上面这些。</br>
 
 ## 讲解
-- 1. 
-这里用到的数据结构除了golang原生的,还构造了链表数据结构
+- 这里用到的数据结构除了golang原生的,还构造了链表数据结构
 
 `utils/safeQueue.go`
 ```golang
@@ -53,9 +52,7 @@ type SafeStrMap struct {
 ```
 两种的用法区别是，当你需要只查询key的时候，来查数据，就用map.这样子代码比较方便理解。
 
-- 
-2. 
-讲解的是interface{}
+-  讲解的是interface{}
 
 根据定义: 
 `interface类型定义了一组方法，如果某个对象实现了某个接口的所有方法，则此对象就实现了此接口`
@@ -77,10 +74,11 @@ type TcpHandleConnectionEvent interface {
 
 可以参考 `src/tcpServer/platConn.go`。
 
-- 3. 
-另外需要讲的是go的并发,在 `/src/tcpServer/tcpServer.go` TcpStart()函数。
+- 另外需要讲的是go的并发,在 `/src/tcpServer/tcpServer.go` TcpStart()函数。
 
 一个client连接上来, 就分派一个goroutine给它。
+
+
 
 
 另外大家觉得有帮助，可以请我喝杯cafe哦～
