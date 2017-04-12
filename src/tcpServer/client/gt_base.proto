@@ -1,0 +1,37 @@
+syntax="proto3";
+package gt_msg;
+
+//0.通讯错误信息
+message CommonError {
+	 int32 Code =1;
+	 string szDescribeString=2;//返回描述信息
+}
+
+//1.心跳请求
+message HHRequest{
+}
+
+//2.心跳回复
+message HHResponse{
+    int64 serverTimeNow=1;//time.now.unix()
+}
+
+//3.订单
+message OrderResponse{
+	string orderID =1;//订单ID
+	string orderAmount=2;//订单金额
+}
+
+//4.苹果订单
+
+message AppOrderResponse{
+	string	openUserID=1;  //渠道id
+	string  shareID=2;   //充值类型id
+	string  orderID=3;  //订单ID
+	string  ipAddress=4;  //ip地址
+	string  cardPrice=5;  //card的价格
+
+	string  cardGold=6; //card的金币
+	string  gameID=7;
+	string  insertID=8;  //商品id
+}
