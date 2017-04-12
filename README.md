@@ -29,7 +29,8 @@ tcpClient和tcpServe逻辑一样，读和写。
 tcp就是以上这些啦。另外就是用语言来实现上面这些。</br>
 
 ## 讲解
-### 1、 这里用到的数据结构除了golang原生的,还构造了链表数据结构
+### 1、 这里用到的数据结构除了golang原生的,还构造了
+- 链表数据结构
 
 `utils/safeQueue.go`
 ```golang
@@ -40,10 +41,9 @@ type SafeQueue struct {
 }
 相当于放进去的是interface,取出来的时候需要判断interface的类型
 ```
-另外在utils包里面还有一种类似map的数据结构 `key:value`
+- 一种类似map的数据结构 `key:value`
 
 `utils/safeStrMap.go`
-
 ```golang
 type SafeStrMap struct {
 	m    map[string]interface{}
@@ -52,7 +52,6 @@ type SafeStrMap struct {
 ```
 两种的用法区别是，当你需要只查询key的时候，来查数据，就用map.这样子代码比较方便理解。
 
--------
 ### 2、  讲解的是interface{}
 
 根据定义: 
@@ -75,7 +74,7 @@ type TcpHandleConnectionEvent interface {
 
 可以参考 `src/tcpServer/platConn.go`。
 
---------
+
 
 ### 3、 另外需要讲的是go的并发,在 `/src/tcpServer/tcpServer.go` TcpStart()函数。
 
